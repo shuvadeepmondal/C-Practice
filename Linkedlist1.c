@@ -44,7 +44,7 @@ void traverse (node *p){
   }
   else{
     q=*p;
-    for ( int j =0 ; (j<i)&&(j != NULL) ; j++){
+    for ( int j =0 ; (j<i)&&(q != NULL) ; j++){
      x = q;
      q = q->next;
   }
@@ -53,3 +53,26 @@ void traverse (node *p){
  }
  }
 
+
+
+void insertList(node **p,int i,node *t){
+    node *q,*x;
+    if( i == 0){
+        t->right = *p;
+        *p = t;
+    }else{
+        q = *p;
+        for (int j = 0; j < (i - 1) && (q != NULL); j++)
+        {
+            q = q->right;
+        }
+        t->right = q->right;
+        if (q->right != NULL)
+        {
+            q->right->left = t;
+        }
+        q->right= t;
+        t->left = q; 
+    }
+
+}
