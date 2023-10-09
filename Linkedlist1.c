@@ -44,11 +44,12 @@ void traverse (node *p){
   }
   else{
     q=*p;
-    for ( int j =0 ; (j<i)&&(j != NULL) ; j++);
+    for ( int j =0 ; (j<i)&&(j != NULL) ; j++){
      x = q;
      q = q->next;
   }
   t->next =x->next;
   x->next =t;
+ }
  }
 
