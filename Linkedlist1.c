@@ -36,21 +36,19 @@ void traverse (node *p){
   }
   p = t;
 }
-
-void insertion (node **p , int i , node *t){
-  node *q ,*x ;
-  if (i == 0){
-    t->next =*p ;
-    *p =t ;
+ void insertion (node **p , int i , node *t){
+  node *q , *x ;
+  if(i ==0){
+    t->next =*p;
+    *p =t;
   }
-  else {
-    q= *p;
-    for (int j = 0 ; (j<i) &&(q!= NULL) ; j++){
-      x = q ;
-      q->next =q ;
-    }
-    t->next =x->next ;
-    x->next =t ;
+  else{
+    q=*p;
+    for ( int j =0 ; (j<i)&&(j != NULL) ; j++);
+     x = q;
+     q = q->next;
   }
-}
+  t->next =x->next;
+  x->next =t;
+ }
 
